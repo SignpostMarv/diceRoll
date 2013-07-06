@@ -1,0 +1,3 @@
+docs/*
+*.error.log
+build/*
