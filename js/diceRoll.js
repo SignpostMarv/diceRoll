@@ -1,5 +1,9 @@
 (function(window){
 	'use strict';
+	var
+		Int32Array = window['Int32Array'],
+		ArrayBuffer = window['ArrayBuffer']
+	;
 /**
 *	Creates dice roll object.
 *	@param spec The specification string, of the format '1d+10', '2d4', '3d-5' etc. 'd' defaults to 6.
@@ -80,18 +84,26 @@ diceRoll.prototype.roll = function(){
 *	@return An array of results.
 *	@see diceRoll.prototype.roll
 */
-diceRoll.prototype.multiRoll = function(n){
+diceRoll.prototype.multiRoll = function(n, forceArrayObj){
 	if(typeof(n) != 'number' && typeof(n) != 'string'){
 		throw new Error('Parameter must be number or string.');
 	}else if(typeof(n) == 'string' && !/\d+/.test(n)){
 		throw new Error('Parameter should be a parseable integer.');
 	}
 	n == typeof(n) == 'number' ? Math.max(1, Math.floor(n)) : parseInt(n, 10);
+	forceArrayObj = !!forceArrayObj;
 	var
 		res = []
 	;
-	for(var i=0;i<n;++i){
-		res.push(this['roll']());
+	if(ArrayBuffer && Int32Array && !forceArrayObj){
+		res = new Int32Array(new ArrayBuffer(n * 4));
+		for(var i=0;i<n;++i){
+			res[i] = this['roll']();
+		}
+	}else{
+		for(var i=0;i<n;++i){
+			res.push(this['roll']());
+		}	
 	}
 	return res;
 };
