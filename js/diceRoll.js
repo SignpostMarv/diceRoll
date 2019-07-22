@@ -5,9 +5,9 @@
 		ArrayBuffer = window['ArrayBuffer']
 	;
 /**
-*	Creates dice roll object.
-*	@param spec The specification string, of the format '1d+10', '2d4', '3d-5' etc. 'd' defaults to 6.
-*	@constructor
+* Creates dice roll object.
+* @param spec The specification string, of the format '1d+10', '2d4', '3d-5' etc. 'd' defaults to 6.
+* @constructor
 */
 function diceRoll(spec){
 	if(typeof(spec) == 'undefined'){
@@ -49,8 +49,8 @@ function diceRoll(spec){
 diceRoll['regex'] = /(\d+d\d*)\s*([\+\-\*\/]\d+)?/;
 
 /**
-*	Makes one roll of the specification.
-*	@return A result of 'rolling' the specification.
+* Makes one roll of the specification.
+* @return A result of 'rolling' the specification.
 */
 diceRoll.prototype.roll = function(){
 	var
@@ -74,15 +74,15 @@ diceRoll.prototype.roll = function(){
 			}
 		break;
 	}
-	
+
 	return roll;
 };
 
 /**
-*	Makes multiple rolls of the specification.
-*	@param  n The number of times to roll the specification.
-*	@return An array of results.
-*	@see diceRoll.prototype.roll
+* Makes multiple rolls of the specification.
+* @param n The number of times to roll the specification.
+* @return An array of results.
+* @see diceRoll.prototype.roll
 */
 diceRoll.prototype.multiRoll = function(n, forceArrayObj){
 	if(typeof(n) != 'number' && typeof(n) != 'string'){
@@ -103,12 +103,12 @@ diceRoll.prototype.multiRoll = function(n, forceArrayObj){
 	}else{
 		for(var i=0;i<n;++i){
 			res.push(this['roll']());
-		}	
+		}
 	}
 	return res;
 };
 	diceRoll.prototype = {
-		'roll'      : diceRoll.prototype.roll,
+		'roll' : diceRoll.prototype.roll,
 		'multiRoll' : diceRoll.prototype.multiRoll
 	};
 	window['diceRoll'] = diceRoll;
