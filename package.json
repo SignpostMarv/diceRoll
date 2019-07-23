@@ -1,0 +1,19 @@
+{
+  "name": "diceRoll",
+  "version": "0.2.0",
+  "description": "diceRoll is a simple library for parsing strings commonly used in pen & paper RPGs then generating dice rolls.",
+  "main": " ",
+  "repository": "https://github.com/SignpostMarv/diceRoll.git",
+  "author": "SignpostMarv <me@signpostmarv.name>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-replace": "^1.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typedoc": "^2.2.2",
+    "gulp-typescript": "^5.0.1",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {}
+}
