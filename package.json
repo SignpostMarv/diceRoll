@@ -1,6 +1,6 @@
 {
   "name": "diceroll-ts",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "diceRoll is a simple library for parsing strings commonly used in pen & paper RPGs then generating dice rolls.",
   "main": " ",
   "repository": "https://github.com/SignpostMarv/diceRoll.git",
