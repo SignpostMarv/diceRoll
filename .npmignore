@@ -1,0 +1,8 @@
+/docs/
+/js/.gitkeep
+/yarn-error.log
+/ts/
+/.editorconfig
+/gulpfile.js
+/tsconfig.json
+/yarn.lock
