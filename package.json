@@ -12,7 +12,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-typedoc": "^2.2.2",
     "gulp-typescript": "^5.0.1",
-    "typedoc": "^0.14.2",
+    "typedoc": "^0.17.0",
     "typescript": "^3.5.3"
   },
   "dependencies": {}
